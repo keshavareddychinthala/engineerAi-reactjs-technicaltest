@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import JwPagination from 'jw-react-pagination';
+
 class Table extends Component {
     mergeData = [];
     constructor(props) {
@@ -45,12 +46,16 @@ class Table extends Component {
     this.props.history.push('/rawjson',rawdata)
     }
     onChangePage(pageOfItems) {
+        console.log(pageOfItems,"dataresulted")
         // update local state with new page of items
         this.setState({ pageOfItems: pageOfItems });
     }
     render() {
         return (
-            <div  style={{backgroundColor:'lightblue'}}>
+            <div  style={{backgroundColor:'lightblue'}}> 
+                     <div style={{marginLeft:'30px'}} className="section">
+                          <h2>TableData</h2> 
+                     </div>
                 <table className="table table-bordered ">
                     <thead>
                         <tr>
